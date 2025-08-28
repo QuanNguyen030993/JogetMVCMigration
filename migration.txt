@@ -1,0 +1,20 @@
+add-migration database_remove_unnecessary -context:SurveyReportREDBContext
+
+update-database -context:SurveyReportREDBContext
+update-database  -context:SurveyReportREDBContext -migration:<tên của add-migration trước đó> - > rollback về bản cũ 
+
+update-database  -context:SurveyReportREDBContext -migration:20240422171854_addSamplePriceValidTo
+
+remove-migration -context:SurveyReportREDBContext
+
+
+dotnet tool install --global dotnet-ef
+dotnet ef migrations add <TênMigration>
+dotnet ef migrations add Wording_Add_SystemNote_Modify --context SurveyReportREDBContext --project 'D:\GitLabSample\Migration\Migration\SurveyReportRE.Models\SurveyReportRE.csproj'  
+
+dotnet ef database update --context SurveyReportREDBContext  --project 'D:\GitLabSample\Migration\Migration\SurveyReportRE.Models\SurveyReportRE.csproj'  
+
+
+dotnet ef --help
+dotnet ef migrations remove
+dotnet ef migrations remove --context SurveyReportREDBContext --project 'D:\GitLabSample\Migration\Migration\SurveyReportRE.Models\SurveyReportRE.csproj'  

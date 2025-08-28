@@ -1,0 +1,6 @@
+Nguyên sai kho
+ - appsetting chưa set
+
+Chưa đổi màn hình thể hiện cấu trúc giá 
+
+Build migration của ProductPlanLogCoefficient
