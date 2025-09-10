@@ -65,6 +65,7 @@ namespace SurveyReportRE.Models
 		public DbSet<Constant> Constant { get; set; }
 		public DbSet<PendingJoget> PendingJoget { get; set; }
 		public DbSet<PolicyIssuanceRequest> PolicyIssuanceRequest { get; set; }
+		public DbSet<RecordIdTracking> RecordIdTracking { get; set; }
 		#endregion
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
