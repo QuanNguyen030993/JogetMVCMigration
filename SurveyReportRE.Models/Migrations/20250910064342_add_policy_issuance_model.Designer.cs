@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250910064342_add_policy_issuance_model")]
+    partial class add_policy_issuance_model
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
