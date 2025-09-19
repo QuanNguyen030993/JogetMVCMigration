@@ -5,26 +5,19 @@ namespace SurveyReportRE.Models.Migration.Business.Data
 {
     public class MailQueue : BaseModel
     {
-        [MaxLength(8000)]
-        public string ToName { get; set; } = "";
-        [MaxLength(8000)]
-        public string ToEmail { get; set; } = "";
-        [MaxLength(8000)]
-        public string Subject { get; set; } = "";
-        [MaxLength(8000)]
-        public string TextBody { get; set; } = "";
-        [MaxLength(8000)]
-        public string HtmlBody { get; set; } = "";
-        [MaxLength(8000)]
-        public string CC { get; set; } = "";
-        [MaxLength(8000)]
-        public string BCC { get; set; } = "";
-        [MaxLength(8000)]
-        public string FromAccount {get;set;} = "";
-        [MaxLength(8000)]
-        public string Type {get;set;} ="";
-        [MaxLength(8000)]
-        public string Attachments {get;set;}= "";
-        public bool? IsSend {get;set;} = false;
+public string  to_name {get;set;} = "";
+ public string  to_email {get;set;} = "";
+ public string  subject {get;set;} = "";
+ [MaxLength(8000)]
+ public string  text_body {get;set;} = "";
+ [MaxLength(8000)]
+ public string  html_body {get;set;} = "";
+ public string  cc {get;set;} = "";
+ public string  bcc {get;set;} = "";
+ public string  from_account {get;set;} = "";
+ public string  type {get;set;} = "";
+ [MaxLength(8000)]
+ public string attachments { get; set; } = "";
+ public string  is_send {get;set;} = "";
     }
 }
