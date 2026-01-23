@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260122032250_quotation_add_clientid")]
+    partial class quotation_add_clientid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1482,10 +1485,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("PIC")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("PartyMultiLangJson")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -1576,10 +1575,6 @@ namespace SurveyReportRE.Models.Migrations
 
                     b.Property<int?>("QuotationLocationCount")
                         .HasColumnType("int");
-
-                    b.Property<string>("QuotationStatus")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("QuotationType")
                         .HasMaxLength(120)
@@ -1889,10 +1884,6 @@ namespace SurveyReportRE.Models.Migrations
 
                     b.Property<decimal?>("VatPercentBI")
                         .HasColumnType("decimal(28, 9)");
-
-                    b.Property<string>("WorkflowStatus")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.HasKey("Id");
 
@@ -5628,39 +5619,19 @@ namespace SurveyReportRE.Models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<bool?>("Active")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("1");
-
-                    b.Property<long?>("BranchId")
+                    b.Property<long?>("AreaId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("BusinessAddress")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BusinessOccupation")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ClientCode")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("ClientId")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)");
 
                     b.Property<string>("ClientName")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)");
 
                     b.Property<Guid?>("CopyFromGuid")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime?>("CorporateDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
                         .HasMaxLength(120)
@@ -5670,9 +5641,6 @@ namespace SurveyReportRE.Models.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
-
-                    b.Property<DateTime?>("DateOfBirth")
-                        .HasColumnType("datetime2");
 
                     b.Property<bool>("Deleted")
                         .ValueGeneratedOnAdd()
@@ -5689,22 +5657,10 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<Guid?>("DraftGuid")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Email")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("FOCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<Guid>("Guid")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("NEWID()");
-
-                    b.Property<string>("JGCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(120)
@@ -5713,84 +5669,17 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Nationality")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("Notes")
-                        .HasMaxLength(400)
-                        .HasColumnType("nvarchar(400)");
-
-                    b.Property<string>("OfficePhoneNumber")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<long?>("OldClientCodeId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("PACode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("PolicyCode")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PostCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("RepresentativeName")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)");
 
                     b.Property<long?>("RowOrder")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Salutation")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("Segment")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("ShortName")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("SourceOfBusiness")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("StaffCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("StaffFlag")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TSCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("TaxAddress")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("TaxCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("Type")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
