@@ -74,6 +74,8 @@ namespace SurveyReportRE.Models
 		public DbSet<SystemProperties> SystemProperties { get; set; }
 		public DbSet<Quotation> Quotation { get; set; } 
 public DbSet<HttpRequestAuditLog> HttpRequestAuditLog { get; set; } 
+public DbSet<Product> Product { get; set; } 
+public DbSet<Line> Line { get; set; } 
 		#endregion
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

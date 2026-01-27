@@ -272,7 +272,12 @@ public class Quotation : BaseModel
     public string? StageAccount {get;set;}= "";   
     public string? WorkflowStatus {get;set;}   = "";  
     public string? QuotationStatus {get;set;}= "";   
-    public string? PIC {get;set;}= "";   // =========================================================
+    public string? PIC {get;set;}= "";   
+
+    public long? ProductId { get; set; }
+    public string? ProductCode { get; set; } = "";  
+    
+    // =========================================================
     // Ý 9 — Attachment/email fields (commented-out + TODO)
     // =========================================================
 
