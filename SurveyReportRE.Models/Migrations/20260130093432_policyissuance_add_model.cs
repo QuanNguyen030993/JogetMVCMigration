@@ -11,8 +11,8 @@ namespace SurveyReportRE.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Quotation");
+            // migrationBuilder.DropTable(
+            //     name: "Quotation");
 
             migrationBuilder.CreateTable(
                 name: "PolicyIssuance",

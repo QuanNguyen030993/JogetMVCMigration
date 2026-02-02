@@ -72,11 +72,11 @@ namespace SurveyReportRE.Models
 		public DbSet<QuotationRequest> QuotationRequest { get; set; }
 		public DbSet<RecordWorkflow> RecordWorkflow { get; set; }
 		public DbSet<SystemProperties> SystemProperties { get; set; }
-		
-public DbSet<HttpRequestAuditLog> HttpRequestAuditLog { get; set; } 
-public DbSet<Product> Product { get; set; } 
-public DbSet<Line> Line { get; set; } 
-public DbSet<PolicyIssuance> PolicyIssuance { get; set; } 
+		public DbSet<HttpRequestAuditLog> HttpRequestAuditLog { get; set; } 
+		public DbSet<Product> Product { get; set; } 
+		public DbSet<Line> Line { get; set; } 
+		public DbSet<Quotation> Quotation { get; set; } 
+		public DbSet<PolicyIssuance> PolicyIssuance { get; set; } 
 
 		#endregion
 
