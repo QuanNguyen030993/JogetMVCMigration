@@ -277,6 +277,7 @@ public class Quotation : BaseModel
     public long? ProductId { get; set; }
     public string? ProductCode { get; set; } = "";  
     public long? LineId { get; set; }
+    public bool? SurveyNeeded { get; set; } =  false;
     // =========================================================
     // Ý 9 — Attachment/email fields (commented-out + TODO)
     // =========================================================
