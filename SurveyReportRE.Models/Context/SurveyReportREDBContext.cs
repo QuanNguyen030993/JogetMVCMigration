@@ -77,7 +77,7 @@ namespace SurveyReportRE.Models
 		public DbSet<Line> Line { get; set; } 
 		public DbSet<Quotation> Quotation { get; set; } 
 		public DbSet<PolicyIssuance> PolicyIssuance { get; set; } 
-
+public DbSet<Document> Document { get; set; } 
 		#endregion
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
