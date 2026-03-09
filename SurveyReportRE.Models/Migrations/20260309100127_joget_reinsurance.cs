@@ -1,0 +1,28 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace SurveyReportRE.Migrations
+{
+    /// <inheritdoc />
+    public partial class joget_reinsurance : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<long>(
+                name: "ReinsuranceId",
+                table: "Quotation",
+                type: "bigint",
+                nullable: true);
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "ReinsuranceId",
+                table: "Quotation");
+        }
+    }
+}
