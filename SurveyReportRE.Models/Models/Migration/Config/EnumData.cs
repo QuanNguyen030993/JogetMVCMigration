@@ -10,7 +10,7 @@ namespace SurveyReportRE.Models.Migration.Config
 {
     public class EnumData : BaseModel
     {
-        public long Value { get; set; } = 0;
+        public string Value { get; set; } = "";
         public string Name { get; set; } = "";
         public string Key { get; set; } = "";
         public int? SysTableId { get; set; }

@@ -18,7 +18,8 @@ public class Quotation : BaseModel
     public DateTime? RequestedDate { get; set; }           // c_reqDate
     public DateTime? DueDate { get; set; }                 // c_dueDate
 
-    public string? RequestType { get; set; } = "";               // c_reqType
+    public string? RequestType { get; set; } = "";    
+    public long? RequestTypeId { get; set; } = 0;               // c_reqType
     public string? QuotationType { get; set; } = "";             // c_typeOfQT
 
     public string? BusinessChannelName { get; set; } = "";        // c_businessChannel
