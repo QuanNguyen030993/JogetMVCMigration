@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using SurveyReportRE.Models.Migration.Base;
 
@@ -121,6 +122,8 @@ public class PolicyIssuance : BaseModel
     public string? SumInsuredBreakdown { get; set; }     // c_breakdownSI
     public string? IsGlobalCover { get; set; }           // c_global (Both/Yes/No)
     public string? PolicyLocation { get; set; }          // c_piLocation
+    [MaxLength(4000)]
+    public string? TurnAroundTimeAttributes { get; set; } = "";
 
     // TODO: Asset list attachments – move to Attachment module
     // public string? MachineryListAttachment { get; set; }       // c_listOfMachineriesAtt

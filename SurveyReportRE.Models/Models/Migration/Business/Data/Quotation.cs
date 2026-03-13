@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using SurveyReportRE.Models.Migration.Base;
 
@@ -25,7 +26,9 @@ public class Quotation : BaseModel
     public string? BusinessChannelName { get; set; } = "";        // c_businessChannel
     public string? SourceOfBusinessName { get; set; } = "";       // c_sourceOfBusiness
     public string? BusinessChannelDisplayName { get; set; } = ""; // c_nameOfBizChannel
-
+    public DateTime? InceptionDate { get ; set ; }
+    [MaxLength(4000)]
+    public string? LockedReferenceFields { get; set; } = "";
     // =========================================================
     // Ý 2 — PolicyHolder/Insured/Client
     // - Multi-language expandable (3rd language+) via JSON
@@ -272,14 +275,17 @@ public class Quotation : BaseModel
     public string? StageDept {get;set;}= "";   
     public string? StageAccount {get;set;}= "";   
     public string? WorkflowStatus {get;set;}   = "";  
-    public string? QuotationStatus {get;set;}= "";   
-    public string? PIC {get;set;}= "";   
+    public string? QuotationStatus {get;set;} = "";   
+    public string? PIC {get;set;} = "";   
 
     public long? ProductId { get; set; }
     public string? ProductCode { get; set; } = "";  
     public long? LineId { get; set; }
     public bool? SurveyNeeded { get; set; } =  false;
-    public long? ReinsuranceId {get;set;} 
+    public long? ReinsuranceId { get; set; }
+    [MaxLength(4000)]
+    public string? TurnAroundTimeAttributes { get; set; } = "";
+
     // =========================================================
     // Ý 9 — Attachment/email fields (commented-out + TODO)
     // =========================================================
