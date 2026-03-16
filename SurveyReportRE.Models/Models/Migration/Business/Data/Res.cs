@@ -9,8 +9,6 @@ public class Res : BaseModel
     // I — Header / Request / Linkage
     // =========================
     public string? ResRequestNo { get; set; }        // c_reqResNo
-    public string? QuotationId { get; set; }         // c_jogetQuoNum
-
     public string? DocumentId { get; set; }          // from c_atId
     public string? AttachmentId { get; set; }        // from c_atId
 
