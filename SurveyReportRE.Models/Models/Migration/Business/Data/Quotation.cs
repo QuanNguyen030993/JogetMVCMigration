@@ -285,6 +285,7 @@ public class Quotation : BaseModel
     public long? ReinsuranceId { get; set; }
     [MaxLength(4000)]
     public string? TurnAroundTimeAttributes { get; set; } = "";
+    public long? LocationId { get; set; } 
 
     // =========================================================
     // Ý 9 — Attachment/email fields (commented-out + TODO)
