@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -43,5 +44,8 @@ namespace SurveyReportRE.Models.Migration.Business.MasterData
         public double? Latitude { get; set; }             
         public double? Longitude { get; set; }
         public string? Country { get; set; } = "";
+        [MaxLength(1000)]
+        public string? PolicyNo { get; set; }
+        public Guid? RecordGuid { get; set; }
     }
 }

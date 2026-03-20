@@ -125,6 +125,22 @@ public class PolicyIssuance : BaseModel
     [MaxLength(4000)]
     public string? TurnAroundTimeAttributes { get; set; } = "";
 
+    //Build
+    public string? StageDept { get; set; } = "";
+    public string? StageAccount { get; set; } = "";
+    public string? WorkflowStatus { get; set; } = "";
+    public string? PolicyIssuanceStatus { get; set; } = "";
+    public string? PIC { get; set; } = "";
+
+    public long? ProductId { get; set; }
+    public long? LineId { get; set; }
+    public long? ReinsuranceId { get; set; }
+    [MaxLength(4000)]
+    public long? LocationId { get; set; }
+    public long? ResId { get; set; } // backup
+    public string? PolicyIssuanceCode { get; set; }
+
+    public long? ClientId { get; set; }
     // TODO: Asset list attachments – move to Attachment module
     // public string? MachineryListAttachment { get; set; }       // c_listOfMachineriesAtt
     // public string? PropertyTypeListAttachment { get; set; }    // c_typeOfPropertyListAtt

@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260320075828_location_add_policycode")]
+    partial class location_add_policycode
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,9 +36,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<string>("ChassisEngineNumber")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
-
-                    b.Property<long?>("ClientId")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("CoInsuranceNote")
                         .HasMaxLength(400)
@@ -138,13 +138,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<long?>("LineId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long?>("LocationId")
-                        .HasMaxLength(4000)
-                        .HasColumnType("bigint");
-
                     b.Property<string>("MachineryList")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -168,10 +161,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("PIC")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("ParentRequestId")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -181,14 +170,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("nvarchar(400)");
 
                     b.Property<string>("PolicyHolderId")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("PolicyIssuanceCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("PolicyIssuanceStatus")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -230,9 +211,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<long?>("ProductId")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("ProductType")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -256,9 +234,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<long?>("ReinsuranceId")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("ReinsuranceType")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -274,9 +249,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<long?>("ResId")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("RiClosings")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -287,14 +259,6 @@ namespace SurveyReportRE.Models.Migrations
 
                     b.Property<long?>("RowOrder")
                         .HasColumnType("bigint");
-
-                    b.Property<string>("StageAccount")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("StageDept")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("Subject")
                         .HasMaxLength(120)
@@ -313,10 +277,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("nvarchar(4000)");
 
                     b.Property<string>("URF")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("WorkflowStatus")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -1813,10 +1773,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<string>("PolicyHolderName")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("PolicyNo")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<decimal?>("PreDiscount")
                         .HasColumnType("decimal(28, 9)");
