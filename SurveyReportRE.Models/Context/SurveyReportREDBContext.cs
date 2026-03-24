@@ -9,6 +9,7 @@ using SurveyReportRE.Models.Migration.Business.Form;
 using SurveyReportRE.Models.Migration.Business.Data;
 using SurveyReportRE.Models.Migration.Business.Workflow;
 using Microsoft.Identity.Client;
+using ERPCore.Models.Migration.Workflow;
 namespace SurveyReportRE.Models
 {
     //public partial class SurveyReportREDBContext : IdentityDbContext<User, Role, int, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>, ICloneable
@@ -77,8 +78,14 @@ namespace SurveyReportRE.Models
 		public DbSet<Line> Line { get; set; } 
 		public DbSet<Quotation> Quotation { get; set; } 
 		public DbSet<PolicyIssuance> PolicyIssuance { get; set; } 
-		public DbSet<Res> Res { get; set; } 
-public DbSet<Document> Document { get; set; } 
+		public DbSet<Res> Res { get; set; }
+        public DbSet<WorkflowDefinition> WorkflowDefinition { get; set; }
+        public DbSet<ActionWorkflow> ActionWorkflow { get; set; }
+        public DbSet<TransitionWorkflow> TransitionWorkflow { get; set; }
+        public DbSet<WorkflowInstanceNode> WorkflowInstanceNode { get; set; }
+        //public DbSet<TaskWorkflow> TaskWorkflow { get; set; } // Review
+        public DbSet<HistoryWorkflow> HistoryWorkflow { get; set; }
+        public DbSet<Document> Document { get; set; } 
 		#endregion
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

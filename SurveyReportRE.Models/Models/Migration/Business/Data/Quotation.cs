@@ -290,6 +290,8 @@ public class Quotation : BaseModel
 
     [MaxLength(1000)]
     public string? PolicyNo { get; set; } = "";
+    public long? DocumentId { get; set; }
+    public long? AttachmentId { get; set; }
 
     // =========================================================
     // Ý 9 — Attachment/email fields (commented-out + TODO)
