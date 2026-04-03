@@ -15,7 +15,7 @@ namespace SurveyReportRE.Models.Migration.Business.Workflow
         public Guid WorkflowDefinitionId { get; set; }
         [MaxLength(100)]
         public string RecordType { get; set; } = null!;     // Quotation / Policy / Survey
-        public Guid CurrentStepId { get; set; }
+        public Guid? CurrentStepId { get; set; }
         [MaxLength(50)]
         public string? CurrentOwnerRoleCode { get; set; }
         public Guid? CurrentOwnerUserId { get; set; }

@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260402015115_modify_workflowinstance_node")]
+    partial class modify_workflowinstance_node
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -7292,7 +7295,7 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<int?>("CurrentStep")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("CurrentStepId")
+                    b.Property<Guid>("CurrentStepId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Deleted")
@@ -7663,10 +7666,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<Guid?>("DraftGuid")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("FNodeId")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("FlowType")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -7709,6 +7708,10 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("NodeId")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<Guid?>("ParentStepId")
                         .HasColumnType("uniqueidentifier");
 
@@ -7741,10 +7744,6 @@ namespace SurveyReportRE.Models.Migrations
 
                     b.Property<long?>("StepType")
                         .HasColumnType("bigint");
-
-                    b.Property<string>("TNodeId")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("ToNodeId")
                         .HasMaxLength(120)
