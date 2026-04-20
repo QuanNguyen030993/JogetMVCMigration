@@ -141,6 +141,8 @@ public class PolicyIssuance : BaseModel
     public string? PolicyIssuanceCode { get; set; }
 
     public long? ClientId { get; set; }
+    [MaxLength(8000)]
+    public string ClientName { get; set; }
     public long? DocumentId { get; set; }
     public long? AttachmentId { get; set; }
     // TODO: Asset list attachments – move to Attachment module
