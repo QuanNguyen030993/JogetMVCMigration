@@ -90,6 +90,7 @@ namespace SurveyReportRE.Models
         public DbSet<QuotationTmp> QuotationTmp { get; set; } 
         public DbSet<Notification> Notification { get; set; } 
         public DbSet<SectionCommentNote> SectionCommentNote { get; set; } 
+        public DbSet<ErrorBrowserDetails> ErrorBrowserDetails { get; set; } 
 		#endregion
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

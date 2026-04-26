@@ -8,7 +8,7 @@ public class Quotation : BaseModel
     // =========================================================
     // System keys (optional) - user said exclude system keys, so not included.
     // =========================================================
-
+    public string? Subject { get; set; } = "";
     // =========================================================
     // Ý 1 — Header/Request (rename)
     // =========================================================
