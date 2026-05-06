@@ -88,6 +88,8 @@ namespace SurveyReportRE.Models
         public DbSet<HistoryWorkflow> HistoryWorkflow { get; set; }
         public DbSet<Document> Document { get; set; } 
         public DbSet<QuotationTmp> QuotationTmp { get; set; } 
+        public DbSet<QuotationDetails> QuotationDetails { get; set; } 
+        public DbSet<QuotationSubDetails> QuotationSubDetails { get; set; } 
         public DbSet<Notification> Notification { get; set; } 
         public DbSet<SectionCommentNote> SectionCommentNote { get; set; } 
         public DbSet<ErrorBrowserDetails> ErrorBrowserDetails { get; set; } 
