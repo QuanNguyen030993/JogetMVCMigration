@@ -93,6 +93,9 @@ namespace SurveyReportRE.Models
         public DbSet<Notification> Notification { get; set; } 
         public DbSet<SectionCommentNote> SectionCommentNote { get; set; } 
         public DbSet<ErrorBrowserDetails> ErrorBrowserDetails { get; set; } 
+        public DbSet<TurnAroundTimeDeptProcessing> TurnAroundTimeDeptProcessing { get; set; } 
+        public DbSet<TurnAroundTimeConfig> TurnAroundTimeConfig { get; set; } 
+        public DbSet<TurnAroundTimeSession> TurnAroundTimeSession { get; set; } 
 		#endregion
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
