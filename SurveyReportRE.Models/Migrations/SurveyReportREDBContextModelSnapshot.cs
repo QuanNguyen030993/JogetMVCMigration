@@ -33,28 +33,12 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<long?>("AttachmentId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("ChassisEngineNumber")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<long?>("ClientId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("ClientName")
                         .HasMaxLength(8000)
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CoInsuranceNote")
-                        .HasMaxLength(400)
-                        .HasColumnType("nvarchar(400)");
-
-                    b.Property<string>("CoInsuranceOutward")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("CoInsurerName")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<Guid?>("CopyFromGuid")
                         .HasColumnType("uniqueidentifier");
@@ -67,10 +51,6 @@ namespace SurveyReportRE.Models.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
-
-                    b.Property<string>("DeclarationText")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<bool>("Deleted")
                         .ValueGeneratedOnAdd()
@@ -93,13 +73,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<DateTime?>("DueDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FactoryOperationYears")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<decimal?>("FinalPremium")
-                        .HasColumnType("decimal(28, 9)");
-
                     b.Property<string>("FollowUpNote")
                         .HasMaxLength(400)
                         .HasColumnType("nvarchar(400)");
@@ -109,24 +82,8 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("NEWID()");
 
-                    b.Property<string>("HoldCoverType")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<DateTime?>("InsuredDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("IsBodApproved")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("IsGlobalCover")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("IsKycChecked")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("IssueReqNo")
                         .HasMaxLength(120)
@@ -155,20 +112,12 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(4000)
                         .HasColumnType("bigint");
 
-                    b.Property<string>("MachineryList")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("NewReplacementValue")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("Notes")
                         .HasMaxLength(400)
@@ -206,10 +155,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("PolicyLocation")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("PolicyNo")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -228,10 +173,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("PremiumBreakdown")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("PrevRemarks")
                         .HasMaxLength(400)
                         .HasColumnType("nvarchar(400)");
@@ -244,10 +185,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("ProductType")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("PropertyTypeList")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -269,10 +206,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<long?>("ReinsuranceId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("ReinsuranceType")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("Remarks")
                         .HasMaxLength(400)
                         .HasColumnType("nvarchar(400)");
@@ -286,14 +219,6 @@ namespace SurveyReportRE.Models.Migrations
 
                     b.Property<long?>("ResId")
                         .HasColumnType("bigint");
-
-                    b.Property<string>("RiClosings")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("RiScheme")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<long?>("RowOrder")
                         .HasColumnType("bigint");
@@ -310,10 +235,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("SumInsuredBreakdown")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("TsRemarks")
                         .HasMaxLength(400)
                         .HasColumnType("nvarchar(400)");
@@ -322,10 +243,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(4000)
                         .HasColumnType("nvarchar(4000)");
 
-                    b.Property<string>("URF")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("WorkflowStatus")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -333,6 +250,219 @@ namespace SurveyReportRE.Models.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PolicyIssuance");
+                });
+
+            modelBuilder.Entity("PolicyIssuanceDetails", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<bool?>("ChassisEngineNumber")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("ConfirmedQuotationFlag")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<Guid?>("CopyFromGuid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<bool?>("DeclarationText")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("Deductible")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool>("Deleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("DraftGuid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool?>("EmailInformRi")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("FactoryOperationYears")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("FinalPremium")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
+
+                    b.Property<bool?>("Ichigenka")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("IsBodApproved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("IsGlobalCover")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("IsKycChecked")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("MachineryList")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("NewReplacementValue")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("Occupation")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("OccupationCode")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("OccupationFCICode")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("POI")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<long?>("PolicyIssuanceId")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool?>("PolicyNoCL")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("Premium")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("PremiumBreakdown")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("PremiumRate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("ProposalForm")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("ResultAttachment")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("RiClosings")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("RiScheme")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("RiskGrading")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<long?>("RowOrder")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool?>("SumInsuredBreakdown")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("TSI")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("TheInsured")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("TnCs")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<bool?>("URFAttachment")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PolicyIssuanceDetails");
                 });
 
             modelBuilder.Entity("PolicyIssuanceProcess", b =>
@@ -1526,6 +1656,76 @@ namespace SurveyReportRE.Models.Migrations
                     b.ToTable("PolicyIssuanceRequest");
                 });
 
+            modelBuilder.Entity("PolicyIssuanceSubDetails", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<Guid?>("CopyFromGuid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<bool>("Deleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<string>("DeletedBy")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("DraftGuid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Endorsment")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("PolicyIssuanceId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Renew")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<long?>("RowOrder")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("TranNo")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PolicyIssuanceSubDetails");
+                });
+
             modelBuilder.Entity("Quotation", b =>
                 {
                     b.Property<long>("Id")
@@ -1549,6 +1749,10 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("BusinessChannelName")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("BusinessOccupation")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -1583,9 +1787,8 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.Property<string>("CurrencyCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
+                    b.Property<long?>("CurrencyId")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("Deleted")
                         .ValueGeneratedOnAdd()
@@ -1648,6 +1851,10 @@ namespace SurveyReportRE.Models.Migrations
 
                     b.Property<DateTime?>("InceptionDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("InsRegisteredAddress")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("InsuredId")
                         .HasMaxLength(120)
@@ -1748,14 +1955,14 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<decimal?>("PremiumRateBI")
                         .HasColumnType("decimal(28, 9)");
 
-                    b.Property<decimal?>("PremiumTotal")
-                        .HasColumnType("decimal(28, 9)");
+                    b.Property<double?>("PremiumTotal")
+                        .HasColumnType("float");
 
                     b.Property<decimal?>("PremiumTotalBI")
                         .HasColumnType("decimal(28, 9)");
 
-                    b.Property<decimal?>("PremiumTotalBeforeVat")
-                        .HasColumnType("decimal(28, 9)");
+                    b.Property<double?>("PremiumTotalBeforeVat")
+                        .HasColumnType("float");
 
                     b.Property<decimal?>("PremiumVoluntary")
                         .HasColumnType("decimal(28, 9)");
@@ -1888,8 +2095,8 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<decimal?>("TotalDue")
-                        .HasColumnType("decimal(28, 9)");
+                    b.Property<double?>("TotalDue")
+                        .HasColumnType("float");
 
                     b.Property<decimal?>("TsiBI")
                         .HasColumnType("decimal(28, 9)");
@@ -1924,10 +2131,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<decimal?>("VatAmountBI")
                         .HasColumnType("decimal(28, 9)");
 
-                    b.Property<string>("VatFlagOrValue")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<decimal?>("VatPercent")
                         .HasColumnType("decimal(28, 9)");
 
@@ -1951,6 +2154,13 @@ namespace SurveyReportRE.Models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<double?>("ActualDays")
+                        .HasColumnType("float");
+
+                    b.Property<string>("BIQtNum")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<string>("ClaimSettlementBasisText")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -1973,6 +2183,9 @@ namespace SurveyReportRE.Models.Migrations
 
                     b.Property<Guid?>("CopyFromGuid")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<long?>("CoverageId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("CreatedBy")
                         .HasMaxLength(120)
@@ -2025,6 +2238,15 @@ namespace SurveyReportRE.Models.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("NEWID()");
+
+                    b.Property<long?>("IncBIQuoId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IncIARQuoId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("InsPeriodId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("JurisdictionLawText")
                         .HasMaxLength(120)
@@ -2118,6 +2340,15 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
+                    b.Property<DateTime?>("PeriodInsuranceEndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("PeriodInsuranceStartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("QuotationId")
+                        .HasColumnType("bigint");
+
                     b.Property<int?>("QuotationLocationCount")
                         .HasColumnType("int");
 
@@ -2175,6 +2406,9 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<string>("TermsMultiLangJson")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
+
+                    b.Property<double?>("TmivShare")
+                        .HasColumnType("float");
 
                     b.Property<string>("TreatySurplusValue")
                         .HasMaxLength(120)
@@ -2313,6 +2547,12 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<string>("UwSumInsPictureRef")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
+
+                    b.Property<long?>("VAT")
+                        .HasColumnType("bigint");
+
+                    b.Property<double?>("VATValue")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -4758,6 +4998,9 @@ namespace SurveyReportRE.Models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<long?>("ClauseId")
+                        .HasColumnType("bigint");
+
                     b.Property<Guid?>("CopyFromGuid")
                         .HasColumnType("uniqueidentifier");
 
@@ -4769,6 +5012,9 @@ namespace SurveyReportRE.Models.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<long?>("DeductibleId")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("Deleted")
                         .ValueGeneratedOnAdd()
@@ -4789,6 +5035,9 @@ namespace SurveyReportRE.Models.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("NEWID()");
+
+                    b.Property<long?>("InstallmentId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(120)
@@ -7270,10 +7519,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(8000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BusinessOccupation")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ClientCode")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
@@ -7398,8 +7643,8 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("StaffCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
+                        .HasMaxLength(8000)
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StaffFlag")
                         .HasMaxLength(120)
@@ -8143,6 +8388,10 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Author")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("Content")
                         .HasMaxLength(8000)

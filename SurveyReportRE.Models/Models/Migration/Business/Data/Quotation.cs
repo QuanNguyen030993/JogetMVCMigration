@@ -102,9 +102,9 @@ public class Quotation : BaseModel
     // =========================================================
     // Ý 5 — Premium / Rate / VAT / Discount / Currency (refactor + keep all)
     // =========================================================
-    public decimal? PremiumTotal { get; set; }             // c_totalPremium
-    public decimal? PremiumTotalBeforeVat { get; set; }    // c_totalPremiumBeforeVat
-    public decimal? TotalDue { get; set; }                 // c_totalDue
+    public double? PremiumTotal { get; set; }             // c_totalPremium
+    public double? PremiumTotalBeforeVat { get; set; }    // c_totalPremiumBeforeVat
+    public double? TotalDue { get; set; }                 // c_totalDue
 
     public decimal? PremiumAnnual { get; set; }            // c_annualPremium
     public decimal? PremiumAnnualTotal { get; set; }       // c_totalAnnualPremium
@@ -134,13 +134,13 @@ public class Quotation : BaseModel
     public decimal? PreDiscountVoluntary { get; set; }     // c_preDiscountVol
     public decimal? PreDiscountCommission { get; set; }    // c_preDiscountCom
 
-    public string? VatFlagOrValue { get; set; } = "";            // c_VAT (unknown flag/value)
+
     public decimal? VatPercent { get; set; }               // c_VATPerc
     public decimal? VatAmount { get; set; }                // c_VATAmount
     public decimal? VatPercentBI { get; set; }             // c_VATPercBI
     public decimal? VatAmountBI { get; set; }              // c_VATAmountBI
 
-    public string? CurrencyCode { get; set; } = "";              // c_currency
+    public long? CurrencyId { get; set; }              // c_currency
     public decimal? ExchangeRate { get; set; }             // c_excRate
     public string? EquivalentToCurrency { get; set; } = "";      // c_equivalentTo
     public decimal? ExchangeRateTotalSumIns { get; set; }  // c_excRateTotalSumIns
@@ -171,6 +171,9 @@ public class Quotation : BaseModel
     public string? PolicyNo { get; set; } = "";
     public long? DocumentId { get; set; }
     public long? AttachmentId { get; set; }
+
+    public string? InsRegisteredAddress { get; set; } = "";
+    public string BusinessOccupation { get; set; } = "";
 
     // =========================================================
     // Ý 9 — Attachment/email fields (commented-out + TODO)

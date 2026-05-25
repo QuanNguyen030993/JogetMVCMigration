@@ -96,6 +96,8 @@ namespace SurveyReportRE.Models
         public DbSet<TurnAroundTimeDeptProcessing> TurnAroundTimeDeptProcessing { get; set; } 
         public DbSet<TurnAroundTimeConfig> TurnAroundTimeConfig { get; set; } 
         public DbSet<TurnAroundTimeSession> TurnAroundTimeSession { get; set; } 
+        public DbSet<PolicyIssuanceSubDetails> PolicyIssuanceSubDetails { get; set; } 
+        public DbSet<PolicyIssuanceDetails> PolicyIssuanceDetails { get; set; } 
         public DbSet<SLA> SLA { get; set; } 
 		#endregion
 

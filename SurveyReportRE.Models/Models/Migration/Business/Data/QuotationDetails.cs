@@ -1,12 +1,23 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models.Migration.Base;
 
 public class QuotationDetails : BaseModel
 {
-
-
+    public long? QuotationId { get; set; }
+    public long? IncIARQuoId { get; set; }
+    public long? IncBIQuoId { get; set; }
+    public string BIQtNum { get; set; }
+    public long? InsPeriodId { get; set; }
+    public double? ActualDays { get; set; }
+    public long? CoverageId { get; set; }   
+    public DateTime? PeriodInsuranceStartDate { get; set; }    
+    public DateTime? PeriodInsuranceEndDate { get; set; }
+    public double? TmivShare { get; set; }               // c_TMIVShare
+    public long? VAT { get; set; }            // c_VAT (unknown flag/value)
+    public double? VATValue { get; set; }            // c_VAT (unknown flag/value)
     // =========================================================
     // Ý 4 — Location / TSI / SumInsured (rename; keep all)
     // =========================================================

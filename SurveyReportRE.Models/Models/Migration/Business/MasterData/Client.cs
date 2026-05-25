@@ -36,7 +36,6 @@ public string		Segment {get;set;}= "";
 [MaxLength(8000)]
 public string		BusinessAddress {get;set;}= "";
 [MaxLength(8000)]
-public string		BusinessOccupation {get;set;}= "";
 public string		StaffCode {get;set;}= "";
 public string		StaffFlag {get;set;}= "";
 public string		Email {get;set;}= "";
