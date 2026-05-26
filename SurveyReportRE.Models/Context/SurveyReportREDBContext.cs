@@ -98,6 +98,7 @@ namespace SurveyReportRE.Models
         public DbSet<TurnAroundTimeSession> TurnAroundTimeSession { get; set; } 
         public DbSet<PolicyIssuanceSubDetails> PolicyIssuanceSubDetails { get; set; } 
         public DbSet<PolicyIssuanceDetails> PolicyIssuanceDetails { get; set; } 
+        public DbSet<PolicyIssuanceChecklist> PolicyIssuanceChecklist { get; set; } 
         public DbSet<SLA> SLA { get; set; } 
 		#endregion
 

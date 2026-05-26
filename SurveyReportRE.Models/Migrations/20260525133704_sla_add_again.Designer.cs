@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260525133704_sla_add_again")]
+    partial class sla_add_again
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,6 +88,33 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<DateTime?>("InsuredDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("IssueReqNo")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("IssueReqRefNo")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("IssueRequestCategory")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("IssueStatusCode")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("IssueStatusLabel")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<long?>("LineId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("LocationId")
+                        .HasMaxLength(4000)
+                        .HasColumnType("bigint");
+
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -96,19 +126,35 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(400)
                         .HasColumnType("nvarchar(400)");
 
+                    b.Property<string>("OverallStatusCode")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<string>("PIC")
-                        .HasMaxLength(4000)
-                        .HasColumnType("nvarchar(4000)");
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("ParentRequestId")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("PmRemarks")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
 
                     b.Property<string>("PolicyHolderId")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("PolicyIssuanceCode")
-                        .HasMaxLength(4000)
-                        .HasColumnType("nvarchar(4000)");
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("PolicyIssuanceStatus")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("PolicyLanguage")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -116,19 +162,45 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
+                    b.Property<string>("PolicyPackage")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<DateTime?>("PolicyPeriodStartDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int?>("PolicyQuantity")
                         .HasColumnType("int");
+
+                    b.Property<string>("PolicyType")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("PrevRemarks")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<string>("ProductCode")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<long?>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("ProductType")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("QuotationCode")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<long?>("QuotationId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("QuotationParentCode")
+                    b.Property<string>("QuotationCodeAlt")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
+
+                    b.Property<long?>("QuotationId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Reason")
                         .HasMaxLength(120)
@@ -137,12 +209,19 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<long?>("ReinsuranceId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("Remarks")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
                     b.Property<DateTime?>("RequestDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("RequestType")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
+
+                    b.Property<long?>("ResId")
+                        .HasColumnType("bigint");
 
                     b.Property<long?>("RowOrder")
                         .HasColumnType("bigint");
@@ -159,6 +238,10 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
+                    b.Property<string>("TsRemarks")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
                     b.Property<string>("TurnAroundTimeAttributes")
                         .HasMaxLength(4000)
                         .HasColumnType("nvarchar(4000)");
@@ -172,7 +255,7 @@ namespace SurveyReportRE.Models.Migrations
                     b.ToTable("PolicyIssuance");
                 });
 
-            modelBuilder.Entity("PolicyIssuanceChecklist", b =>
+            modelBuilder.Entity("PolicyIssuanceDetails", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -374,180 +457,6 @@ namespace SurveyReportRE.Models.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("URFAttachment")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PolicyIssuanceChecklist");
-                });
-
-            modelBuilder.Entity("PolicyIssuanceDetails", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<bool?>("ChassisEngineNumber")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("ConfirmedQuotationFlag")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<Guid?>("CopyFromGuid")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CreatedBy")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
-
-                    b.Property<bool?>("DeclarationText")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool>("Deleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<string>("DeletedBy")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("DraftGuid")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool?>("EmailInformRi")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("FactoryOperationYears")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("FinalPremium")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<Guid>("Guid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
-
-                    b.Property<bool?>("HoldCoverType")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("Ichigenka")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("IsBodApproved")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("IsGlobalCover")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("IsKycChecked")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("LanguageOfPolicy")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("MachineryList")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("NewReplacementValue")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<DateTime?>("PeriodInsuranceEndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("PeriodInsuranceStartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("PolicyIssuanceId")
-                        .HasColumnType("bigint");
-
-                    b.Property<bool?>("PolicyPackage")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("PremiumBreakdown")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("ProposalForm")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("Reason")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("ResultAttachment")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("RiClosings")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<bool?>("RiScheme")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<long?>("RowOrder")
-                        .HasColumnType("bigint");
 
                     b.Property<bool?>("URFAttachment")
                         .ValueGeneratedOnAdd()
@@ -1804,14 +1713,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<long?>("PolicyIssuanceId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("PolicyNo")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("QuotationCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("Renew")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -1836,6 +1737,9 @@ namespace SurveyReportRE.Models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<decimal?>("AnnualRate")
+                        .HasColumnType("decimal(28, 9)");
+
                     b.Property<long?>("AttachmentId")
                         .HasColumnType("bigint");
 
@@ -1851,11 +1755,19 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("BusinessOccupationName")
+                    b.Property<string>("BusinessOccupation")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("ClientCode")
+                    b.Property<string>("CfeCode")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("ClientCodeJG")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("ClientCodePA")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -1878,6 +1790,9 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
+                    b.Property<long?>("CurrencyId")
+                        .HasColumnType("bigint");
+
                     b.Property<bool>("Deleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -1890,8 +1805,11 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("DiscountPercentOrValue")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<long?>("DocumentId")
-                        .HasMaxLength(1000)
                         .HasColumnType("bigint");
 
                     b.Property<Guid?>("DraftGuid")
@@ -1900,10 +1818,39 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<DateTime?>("DueDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("EquivalentToCurrency")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<decimal?>("ExchangeRate")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("ExchangeRateTotalSumIns")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("ExchangeRateTotalSumInsVnd")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<string>("Exposure")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("GeoLimitEng")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("GeoLimitViet")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<Guid>("Guid")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("NEWID()");
+
+                    b.Property<string>("IarQuotationNo")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<DateTime?>("InceptionDate")
                         .HasColumnType("datetime2");
@@ -1920,7 +1867,11 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("LineCode")
+                    b.Property<string>("IsCfe")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("IsCfeForm")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -1930,6 +1881,9 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<string>("LineName")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
+
+                    b.Property<long?>("LocationId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("LockedReferenceFields")
                         .HasMaxLength(4000)
@@ -1941,9 +1895,6 @@ namespace SurveyReportRE.Models.Migrations
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<long?>("Occupation")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("PIC")
                         .HasMaxLength(120)
@@ -1962,10 +1913,74 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("PolicyNo")
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<decimal?>("PreDiscount")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PreDiscountCommission")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PreDiscountTotal")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PreDiscountVoluntary")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumActual")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumAnnual")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumAnnualTotal")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumCfe")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumCfeAnnual")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumCommission")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumDiscount")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumRate")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumRateAlt")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumRateBI")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<double?>("PremiumTotal")
+                        .HasColumnType("float");
+
+                    b.Property<decimal?>("PremiumTotalBI")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<double?>("PremiumTotalBeforeVat")
+                        .HasColumnType("float");
+
+                    b.Property<decimal?>("PremiumVoluntary")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumVoluntaryAnnual")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("PremiumVoluntaryValue")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<string>("ProductCode")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("ProductCode")
+                    b.Property<string>("ProductDisplayName")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -1976,16 +1991,13 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
+                    b.Property<string>("ProductType")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<string>("QuotationCode")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("QuotationParentCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<long?>("QuotationQuantity")
-                        .HasColumnType("bigint");
 
                     b.Property<string>("QuotationStatus")
                         .HasMaxLength(120)
@@ -2026,6 +2038,10 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<long?>("RowOrder")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("ShowCfe")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<string>("SourceOfBusinessName")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -2038,18 +2054,91 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
+                    b.Property<string>("SubLineName")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<string>("Subject")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
+
+                    b.Property<decimal?>("SumInsuredBI")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("SumInsuredTotal")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("SumInsuredTotalAlt")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("SumInsuredTotalUsd")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("SumInsuredTotalVnd")
+                        .HasColumnType("decimal(28, 9)");
 
                     b.Property<bool?>("SurveyNeeded")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValueSql("0");
 
+                    b.Property<string>("TopRisk")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("TopRiskPd")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("TopRiskPdBI")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("TopRiskPdQuotation")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<double?>("TotalDue")
+                        .HasColumnType("float");
+
+                    b.Property<decimal?>("TsiBI")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<string>("TsiFromBi")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("TsiFromBiForm")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<decimal?>("TsiPd")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("TsiPdBI")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("TsiPdQuotation")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("TsiTotal")
+                        .HasColumnType("decimal(28, 9)");
+
                     b.Property<string>("TurnAroundTimeAttributes")
                         .HasMaxLength(4000)
                         .HasColumnType("nvarchar(4000)");
+
+                    b.Property<decimal?>("VatAmount")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("VatAmountBI")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("VatPercent")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("VatPercentBI")
+                        .HasColumnType("decimal(28, 9)");
 
                     b.Property<string>("WorkflowStatus")
                         .HasMaxLength(120)
@@ -2068,19 +2157,32 @@ namespace SurveyReportRE.Models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<long?>("ActualDays")
-                        .HasColumnType("bigint");
+                    b.Property<double?>("ActualDays")
+                        .HasColumnType("float");
 
-                    b.Property<string>("BiQtNum")
+                    b.Property<string>("BIQtNum")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("CfeCode")
+                    b.Property<string>("ClaimSettlementBasisText")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<long?>("ClauseId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("ClauseName")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("CoInsuranceOutValue")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("CoInsuranceShareValue")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("CoInsurerName")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<Guid?>("CopyFromGuid")
                         .HasColumnType("uniqueidentifier");
@@ -2097,11 +2199,13 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.Property<long?>("CurrencyId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Deductible")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
-                    b.Property<long?>("DeductibleId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("DeductibleFire")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<bool>("Deleted")
                         .ValueGeneratedOnAdd()
@@ -2118,17 +2222,25 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<Guid?>("DraftGuid")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double?>("ExchangeRate")
-                        .HasColumnType("float");
+                    b.Property<string>("DutyOfDisclosureText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("EvaluationDetailPictureRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("EvaluationDetailText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<decimal?>("EvaluationTotalScore")
+                        .HasColumnType("decimal(28, 9)");
 
                     b.Property<Guid>("Guid")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasDefaultValueSql("NEWID()");
-
-                    b.Property<string>("IarQuotationNo")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
 
                     b.Property<long?>("IncBIQuoId")
                         .HasColumnType("bigint");
@@ -2139,13 +2251,86 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<long?>("InsPeriodId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("InstallmentId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("JurisdictionLawText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
-                    b.Property<bool?>("IsCfe")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
+                    b.Property<string>("LimitOfLiability")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("LocationAttachmentRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<int?>("LocationCountActual")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LocationCountActualAlt")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LocationCountAnnual")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LocationCountDeclared")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LocationCountLegacy")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LocationMapRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("LocationSituation")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("LocationSubAttachmentRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("LocationSummary")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<decimal?>("LossHistoryAccLossAmount")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<string>("LossHistoryAccNoClaimText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<decimal?>("LossHistoryAccPremium")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("LossHistoryAccRatio")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<string>("LossHistoryAccText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<decimal?>("LossHistoryLossAmount")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<decimal?>("LossHistoryLossRatio")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<string>("LossHistoryNoClaimText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<decimal?>("LossHistoryPremium")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<string>("MktAuthorityFormRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("MktAuthorityText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("ModifiedBy")
                         .HasMaxLength(120)
@@ -2154,72 +2339,222 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("NetRetentionValue")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<DateTime?>("PeriodInsuranceEndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("PeriodInsuranceStartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double?>("PremiumCfe")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("PremiumRate")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("PremiumTotal")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("PremiumTotalBeforeVat")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("PremiumVoluntary")
-                        .HasColumnType("float");
-
                     b.Property<long?>("QuotationId")
                         .HasColumnType("bigint");
 
+                    b.Property<int?>("QuotationLocationCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReferralReasonsText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("ReferralRequiredFlag")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("ReferralType")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("RetentionValue")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("RiArrangementAttachmentRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("RiArrangementText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<string>("RiskGrade")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("RiskGradeTableJson")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("RiskGradeType")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("RiskGradingText")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
                     b.Property<long?>("RowOrder")
                         .HasColumnType("bigint");
 
-                    b.Property<bool?>("ShowCfe")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<double?>("SumInsuredTotal")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("SumInsuredTotalUsd")
-                        .HasColumnType("float");
+                    b.Property<string>("SpecialAppliedSpec")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("TermsConditionsText")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("TmiCode")
+                    b.Property<string>("TermsMultiLangJson")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
                     b.Property<double?>("TmivShare")
                         .HasColumnType("float");
 
-                    b.Property<double?>("TopRiskPd")
-                        .HasColumnType("float");
+                    b.Property<string>("TreatySurplusValue")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
-                    b.Property<double?>("TopRiskPdQuotation")
-                        .HasColumnType("float");
+                    b.Property<DateTime?>("UwAcceptedDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<double?>("TotalDue")
-                        .HasColumnType("float");
+                    b.Property<string>("UwAcceptedFlag")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
-                    b.Property<double?>("Vat")
-                        .HasColumnType("float");
+                    b.Property<string>("UwAccumulatedMetric")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
-                    b.Property<double?>("VatValue")
+                    b.Property<string>("UwAnnualMetric")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwAssessorName")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwAttachmentRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwAuthorityConditionsText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwAuthorityFormRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwAuthorityText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwBusinessStartedYearOrDate")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwCommentText")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<string>("UwCommentsAttachmentRef")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<string>("UwEilrAtExpiryMetric")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwEvaluationDetailPictureRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwEvaluationDetailText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<decimal?>("UwEvaluationTotalScore")
+                        .HasColumnType("decimal(28, 9)");
+
+                    b.Property<string>("UwFormFlag")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwJapaneseNonJapaneseCode")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwLeaderName")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwLeaderUsername")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwLineOfBusinessText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwLossRatioAccumulatedMetric")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwMktCommentText")
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<string>("UwOccupationText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwPolicyHolderText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwPortfolioName")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwPricingPictureRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwPricingText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwReferralReasonText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwReferralType")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwRelatedFilesRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwSourceName")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwSumInsLimitText")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<string>("UwSumInsPictureRef")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
+                    b.Property<long?>("VAT")
+                        .HasColumnType("bigint");
+
+                    b.Property<double?>("VATValue")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -4705,9 +5040,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasDefaultValueSql("NEWID()");
 
                     b.Property<long?>("InstallmentId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long?>("LocationId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("ModifiedBy")
