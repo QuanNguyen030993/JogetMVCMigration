@@ -116,7 +116,10 @@ public class PolicyIssuance : BaseModel
     public string? PolicyIssuanceStatus { get; set; } = "";
     [MaxLength(4000)]
     public string? PIC { get; set; } = "";
-
+    [MaxLength(4000)]
+    public string? LeaderPIC { get; set; } = "";
+    [MaxLength(4000)]
+    public string? HODPIC { get; set; } = "";
 
     public long? ReinsuranceId { get; set; }
     [MaxLength(4000)]
@@ -127,6 +130,8 @@ public class PolicyIssuance : BaseModel
     public string ClientName { get; set; }
     public long? DocumentId { get; set; }
     public long? AttachmentId { get; set; }
+    public long? BranchId { get; set; }
+
     // TODO: Asset list attachments – move to Attachment module
     // public string? HardSoftCopy { get; set; }           // c_hardSoftCopy
 }

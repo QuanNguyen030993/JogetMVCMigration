@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260529071137_add_pic_in_leader_hod")]
+    partial class add_pic_in_leader_hod
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +34,6 @@ namespace SurveyReportRE.Models.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<long?>("AttachmentId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long?>("BranchId")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("ClientId")
@@ -1853,9 +1853,6 @@ namespace SurveyReportRE.Models.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<long?>("AttachmentId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long?>("BranchId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("BusinessAddress")

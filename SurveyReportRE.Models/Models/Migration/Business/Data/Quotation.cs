@@ -60,7 +60,6 @@ public class Quotation : BaseModel
     public string? ProductName { get; set; } = "";               // c_productName
     //public string? ProductDisplayName { get; set; } = "";        // c_productNameView
     //public string? ProductType { get; set; } = "";               // c_productType
-
     public string? LineName { get; set; } = "";                  // c_lineName
     //public string? SubLineName { get; set; } = "";               // c_lineName1
     public long? QuotationQuantity { get; set; }    
@@ -78,8 +77,13 @@ public class Quotation : BaseModel
     public string? StageDept {get;set;}= "";   
     public string? StageAccount {get;set;}= "";   
     public string? WorkflowStatus {get;set;}   = "";  
-    public string? QuotationStatus {get;set;} = "";   
-    public string? PIC {get;set;} = "";   
+    public string? QuotationStatus {get;set;} = "";
+    [MaxLength(4000)]
+    public string? PIC {get;set;} = "";
+    [MaxLength(4000)]
+    public string? LeaderPIC {get;set;} = "";
+    [MaxLength(4000)]
+    public string? HODPIC {get;set;} = "";   
     public long? ProductId { get; set; }
     public string? ProductCode { get; set; } = "";  
     public long? LineId { get; set; }
@@ -93,6 +97,7 @@ public class Quotation : BaseModel
     [MaxLength(1000)]
     public long? DocumentId { get; set; }
     public long? AttachmentId { get; set; }
+    public long? BranchId { get; set; } 
 
 
 
