@@ -47,7 +47,11 @@ public DateTime?		DateOfBirth {get;set;}//yyyymmdd
 public string		OfficePhoneNumber {get;set;}= "";
 public string		RepresentativeName {get;set;}= "";
 public DateTime?		StartDate {get;set;}//yyyymmdd 
+        public long? SourceOfBusinessId { get; set; }
+
 public string		SourceOfBusiness {get;set;}= "";
+        public long? BusinessOccupationId { get; set; }
+public string		BusinessOccupation {get;set;}= "";
 
         
     }
