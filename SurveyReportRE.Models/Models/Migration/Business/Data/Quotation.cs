@@ -100,9 +100,9 @@ public class Quotation : BaseModel
     public long? AttachmentId { get; set; }
     public long? BranchId { get; set; } 
     public string? BranchCode { get; set; }
-    public bool? IsMakeOption { get; set; } = false;
-    public string? OptionParentCode { get; set; }   
+    public bool? IsNotMakeOption { get; set; } = false;
+    public string? OptionParentCode { get; set; }
+    public bool? IsView { get; set; } = true;
 
 
-    
 }

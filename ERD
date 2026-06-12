@@ -1,0 +1,137 @@
+erDiagram
+
+    QUOTATION_HEADER {
+        guid Id
+        string RequestNo
+        string QuotationCode
+        string RequestType
+        datetime RequestedDate
+        datetime DueDate
+        string PolicyHolderId
+        string PolicyHolderName
+        string InsuredName
+        string ProductName
+        string LineName
+    }
+
+    QUOTATION_DETAIL {
+        guid Id
+        guid QuotationId
+        decimal SumInsuredTotal
+        decimal PremiumTotal
+        decimal PremiumTotalBeforeVat
+        decimal VATValue
+        string CurrencyId
+        decimal ExchangeRate
+        datetime PeriodInsuranceStartDate
+        datetime PeriodInsuranceEndDate
+    }
+
+    QUOTATION_SUBDETAIL {
+        guid Id
+        guid QuotationId
+        string CoverageId
+        string DeductibleId
+        string InstallmentId
+    }
+
+    POLICY_ISSUANCE_HEADER {
+        guid Id
+        guid QuotationId
+        string PolicyNo
+        string RequestType
+        string IssueRequestCategory
+        datetime RequestDate
+        datetime DueDate
+        string PolicyHolderId
+        string Subject
+        string Status
+    }
+
+    POLICY_ISSUANCE_DETAIL {
+        guid Id
+        guid PolicyIssuanceId
+        string PolicyLanguage
+        string PolicyPackage
+        string Reason
+        string HoldCoverType
+    }
+
+    POLICY_ISSUANCE_ATTACHMENT {
+        guid Id
+        guid PolicyIssuanceId
+        string RiScheme
+        string RiClosings
+        decimal FinalPremium
+        string PremiumBreakdown
+        bool IsKycChecked
+        bool IsBodApproved
+    }
+
+    POLICY_ISSUANCE_CHECKLIST {
+        guid Id
+        guid PolicyIssuanceId
+        string RiskGrading
+        decimal TSI
+        decimal Premium
+        string Deductible
+        string TnCs
+    }
+
+    POLICY_ISSUANCE_SUBDETAIL {
+        guid Id
+        guid PolicyIssuanceId
+        string TranNo
+        string RenewId
+        string EndorsementId
+    }
+
+    DOCUMENT {
+        guid Id
+        string FileName
+        string FileType
+        long Size
+        string SubDirectory
+    }
+
+    NOTIFICATION {
+        guid Id
+        string Title
+        string Url
+        bool IsRead
+        string Resource
+    }
+
+    TURNAROUND_SESSION {
+        guid Id
+        guid RecordGuid
+        datetime SessionStartDate
+        datetime SessionEndDate
+    }
+
+    TURNAROUND_DEPT {
+        guid Id
+        guid SessionId
+        datetime AcceptDate
+        datetime CompleteDate
+        int ProcessingDays
+    }
+
+    %% RELATIONSHIPS
+
+    QUOTATION_HEADER ||--o{ QUOTATION_DETAIL : has
+    QUOTATION_HEADER ||--o{ QUOTATION_SUBDETAIL : has
+
+    QUOTATION_HEADER ||--|| POLICY_ISSUANCE_HEADER : converts_to
+
+    POLICY_ISSUANCE_HEADER ||--o{ POLICY_ISSUANCE_DETAIL : has
+    POLICY_ISSUANCE_HEADER ||--o{ POLICY_ISSUANCE_ATTACHMENT : has
+    POLICY_ISSUANCE_HEADER ||--o{ POLICY_ISSUANCE_CHECKLIST : has
+    POLICY_ISSUANCE_HEADER ||--o{ POLICY_ISSUANCE_SUBDETAIL : has
+
+    QUOTATION_HEADER ||--o{ DOCUMENT : attaches
+    POLICY_ISSUANCE_HEADER ||--o{ DOCUMENT : attaches
+
+    POLICY_ISSUANCE_HEADER ||--o{ NOTIFICATION : triggers
+
+    TURNAROUND_SESSION ||--o{ TURNAROUND_DEPT : has
