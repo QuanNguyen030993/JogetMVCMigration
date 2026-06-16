@@ -8,7 +8,10 @@ public class Quotation : BaseModel
     // =========================================================
     // System keys (optional) - user said exclude system keys, so not included.
     // =========================================================
+    [MaxLength(8000)]
     public string? Subject { get; set; } = "";
+    [MaxLength(8000)]
+    public string? LeaderComment { get; set; } = "";
     // =========================================================
     // Ý 1 — Header/Request (rename)
     // =========================================================

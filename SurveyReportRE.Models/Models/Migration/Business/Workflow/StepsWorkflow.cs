@@ -37,7 +37,10 @@ namespace SurveyReportRE.Models.Migration.Business.Workflow
 
         [MaxLength(100)]
         public string? UiMode { get; set; }            // ReadOnly / EditQuotation / Approval
-
+        [MaxLength(4000)]
+        public string? Command { get; set; }            // ReadOnly / EditQuotation / Approval
+        [MaxLength(8000)]
+        public string? CommandConfig { get; set; }            // ReadOnly / EditQuotation / Approval
         public int? LevelNo { get; set; }
 
         [MaxLength(100)]

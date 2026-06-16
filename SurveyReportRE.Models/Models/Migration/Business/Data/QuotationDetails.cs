@@ -252,7 +252,7 @@ public class QuotationDetails : BaseModel
     public double? Vat { get; set; }
     public double? VatValue { get; set; }
     public double? TotalDue { get; set; }
-
+    [MaxLength(8000)]
     public string TermsConditionsText { get; set; }
     public string RiskGrade { get; set; }
     public string TmiCode { get; set; }

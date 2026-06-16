@@ -157,6 +157,7 @@ public class QuotationTmp : BaseModel
     // - Eng/Viet follow logic Ý 2 (multi-language JSON)
     // =========================================================
     // Default display (prefer VI -> EN -> any)
+    [MaxLength(8000)]
     public string? TermsConditionsText { get; set; } = "";           // from c_termsConViet/c_termsConEng/c_termsCon
     public string? ClaimSettlementBasisText { get; set; } = "";      // from c_claimSetBasisViet/c_claimSetBasisEng
     public string? JurisdictionLawText { get; set; } = "";           // from c_lawJurisViet/c_lawJurisEng
