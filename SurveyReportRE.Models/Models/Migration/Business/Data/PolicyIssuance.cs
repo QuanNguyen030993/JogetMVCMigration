@@ -113,7 +113,7 @@ public class PolicyIssuance : BaseModel
     public string? StageDept { get; set; } = "";
     public string? StageAccount { get; set; } = "";
     public string? WorkflowStatus { get; set; } = "";
-    public string? PolicyIssuanceStatus { get; set; } = "";
+    //public string? PolicyIssuanceStatus { get; set; } = "";
     [MaxLength(4000)]
     public string? PIC { get; set; } = "";
     [MaxLength(4000)]

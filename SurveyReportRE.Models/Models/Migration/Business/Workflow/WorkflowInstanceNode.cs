@@ -8,7 +8,6 @@ namespace SurveyReportRE.Models.Migration.Business.Workflow
     public class WorkflowInstanceNode : BaseModel
     {
         public string Code { get; set; } = "";
-        public Guid? InstanceWorkflowId { get; set; }
         public Guid? WorkflowDefinitionId { get; set; }
         [MaxLength(50)]
         public string NodeStatus { get; set; } = "Pending"; // Pending / Active / Completed / Skipped / Returned

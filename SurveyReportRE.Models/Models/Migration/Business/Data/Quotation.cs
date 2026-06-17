@@ -79,8 +79,8 @@ public class Quotation : BaseModel
     // Build
     public string? StageDept {get;set;}= "";   
     public string? StageAccount {get;set;}= "";   
-    public string? WorkflowStatus {get;set;}   = "";  
-    public string? QuotationStatus {get;set;} = "";
+    public string? WorkflowStatus {get;set;}   = "";
+    //public string? QuotationStatus { get; set; } = "";
     public long? StatusId {get;set;} = 0  ;
     [MaxLength(4000)]
     public string? PIC {get;set;} = "";
