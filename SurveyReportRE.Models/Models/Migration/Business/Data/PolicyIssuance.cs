@@ -10,7 +10,7 @@ public class PolicyIssuance : BaseModel
     // =========================
 
     public string? RequestType { get; set; }             // c_reqType
-
+    public string? PolicyIssuanceRequest { get; set; }
     public DateTime? RequestDate { get; set; }           // c_reqDate
     public DateTime? DueDate { get; set; }               // c_dueDate
     public DateTime? InsuredDate { get; set; }           // c_dateInsured
@@ -31,6 +31,7 @@ public class PolicyIssuance : BaseModel
     //public DateTime? PolicyPeriodStartDate { get; set; } // c_periodInsStart
 
     public int? PolicyQuantity { get; set; }             // c_quantityOfPolicy
+    public long? RequestTypeId { get; set; } = 0;               // c_reqType
 
     // =========================
     // Ý 3 — PIC / Assignee / Routing
