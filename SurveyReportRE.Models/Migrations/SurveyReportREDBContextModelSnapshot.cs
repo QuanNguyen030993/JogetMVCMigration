@@ -7376,9 +7376,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<long?>("SourceOfBusinessId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("SourceOfBusinessId")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("StaffCode")
                         .HasMaxLength(8000)
                         .HasColumnType("nvarchar(max)");
