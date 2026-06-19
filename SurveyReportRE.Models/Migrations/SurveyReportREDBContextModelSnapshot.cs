@@ -7248,10 +7248,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(8000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("BusinessOccupation")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<long?>("BusinessOccupationId")
                         .HasColumnType("bigint");
 
@@ -7266,6 +7262,9 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<string>("ClientName")
                         .HasMaxLength(8000)
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("ClientTypeId")
+                        .HasColumnType("bigint");
 
                     b.Property<Guid?>("CopyFromGuid")
                         .HasColumnType("uniqueidentifier");
@@ -7297,14 +7296,14 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("DisplayName")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
+
                     b.Property<Guid?>("DraftGuid")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("FOCode")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -7374,9 +7373,8 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
-                    b.Property<string>("SourceOfBusiness")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
+                    b.Property<long?>("SourceOfBusinessId")
+                        .HasColumnType("bigint");
 
                     b.Property<long?>("SourceOfBusinessId")
                         .HasColumnType("bigint");
@@ -7392,10 +7390,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<DateTime?>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("TSCode")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<string>("TaxAddress")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
@@ -7407,6 +7401,9 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<string>("Type")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
+
+                    b.Property<long?>("TypeId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
