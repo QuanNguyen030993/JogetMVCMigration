@@ -25,6 +25,7 @@ namespace SurveyReportRE.Models.Migration.Business.MasterData
         [MaxLength(8000)]
         public string AttachmentNote { get; set; } = "";
         public bool? IsPrimary { get; set; } = false;
+        [MaxLength(8000)]
         public string Attributes { get; set; } 
     }
 }
