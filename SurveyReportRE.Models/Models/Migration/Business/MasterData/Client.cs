@@ -17,12 +17,13 @@ namespace SurveyReportRE.Models.Migration.Business.MasterData
         [MaxLength(8000)]
         public string ClientName { get; set; } = "";
         [MaxLength(8000)]
-        public string PolicyCode { get; set; } = "";
+        //public string PolicyCode { get; set; } = "";
         public long? OldClientCodeId { get; set; }
         public string ShortName { get; set; } = "";
         public string		ClientId {get;set;}= "";
         public string		Notes {get;set;}= "";
-        public string		Nationality {get;set;}= "";
+        public long?		NationalityId  {get;set;}= 0;
+        public long?		CountryId  {get;set;}= 0;
         public string		PACode {get;set;}= "";
         public DateTime?	CorporateDate {get;set;} //yyyymmdd 
         public string		Salutation {get;set;}= "";
@@ -31,11 +32,13 @@ namespace SurveyReportRE.Models.Migration.Business.MasterData
         public string		PhoneNumber {get;set;}= "";
         public string		JGCode {get;set;}= "";
         public string		Segment {get;set;}= "";
+        public long?		SegmentId {get;set;} = 0;
         [MaxLength(8000)]
         public string		BusinessAddress {get;set;}= "";
         [MaxLength(8000)]
         public string		StaffCode {get;set;}= "";
-        public string		StaffFlag {get;set;}= "";
+        public string?		StaffFlag {get;set;}= "";
+        public long?		StaffFlagId {get;set;}= 0;
         public string		Email {get;set;}= "";
         public string		PostCode {get;set;}= "";
         public bool? Active { get; set; }          // (Y/N) 
@@ -46,7 +49,7 @@ namespace SurveyReportRE.Models.Migration.Business.MasterData
         public string		RepresentativeName {get;set;}= "";
         public string		DisplayName {get;set;}= "";
         public DateTime?	StartDate {get;set;}//yyyymmdd 
-        public long?		SourceOfBusinessId {get;set;}= 0;
+        //public long?		SourceOfBusinessId {get;set;}= 0;
         public long?		BusinessOccupationId {get;set;}= 0;
         public long?		ClientTypeId {get;set;}= 0;
         public long?		TypeId {get;set;}= 0;

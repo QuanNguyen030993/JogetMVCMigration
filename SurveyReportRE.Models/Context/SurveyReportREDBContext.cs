@@ -99,10 +99,11 @@ namespace SurveyReportRE.Models
         public DbSet<PolicyIssuanceSubDetails> PolicyIssuanceSubDetails { get; set; } 
         public DbSet<PolicyIssuanceDetails> PolicyIssuanceDetails { get; set; } 
         public DbSet<PolicyIssuanceChecklist> PolicyIssuanceChecklist { get; set; } 
-        public DbSet<SLA> SLA { get; set; } 
-		#endregion
+        public DbSet<SLA> SLA { get; set; }
+        public DbSet<Country> Country { get; set; }
+        #endregion
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
 			modelBuilder.Entity<Role>().ToTable("AspNetRoles");
