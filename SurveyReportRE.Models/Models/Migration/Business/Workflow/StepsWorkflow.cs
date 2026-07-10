@@ -67,5 +67,6 @@ namespace SurveyReportRE.Models.Migration.Business.Workflow
         public long? StatusId { get; set; } = 0;
         public string StatusCode { get; set; } = "";
         public string StatusName { get; set; } = "";
+        public bool? IsReturn { get; set; } = false;
     }
 }
