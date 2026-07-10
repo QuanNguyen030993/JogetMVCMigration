@@ -134,6 +134,8 @@ public class PolicyIssuance : BaseModel
     public long? BranchId { get; set; }
     public string? BranchCode { get; set; }
     public long? StatusId { get; set; } = 0;
+    [MaxLength(8000)]
+    public string? ActionStatus { get; set; } 
     // TODO: Asset list attachments – move to Attachment module
     // public string? HardSoftCopy { get; set; }           // c_hardSoftCopy
 }

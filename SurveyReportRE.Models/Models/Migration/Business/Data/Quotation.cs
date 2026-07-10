@@ -106,6 +106,7 @@ public class Quotation : BaseModel
     public bool? IsNotMakeOption { get; set; } = false;
     public string? OptionParentCode { get; set; }
     public bool? IsView { get; set; } = true;
-
+    [MaxLength(8000)]
+    public string? ActionStatus { get; set; }   
 
 }
