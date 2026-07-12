@@ -1,4 +1,4 @@
-add-migration client_occupation_add -context:SurveyReportREDBContext
+add-migration notif_add_type -context:SurveyReportREDBContext
 
 update-database -context:SurveyReportREDBContext
 

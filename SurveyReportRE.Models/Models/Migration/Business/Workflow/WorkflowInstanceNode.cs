@@ -9,8 +9,8 @@ namespace SurveyReportRE.Models.Migration.Business.Workflow
     {
         public string Code { get; set; } = "";
         public Guid? WorkflowDefinitionId { get; set; }
-        [MaxLength(50)]
-        public string NodeStatus { get; set; } = "Pending"; // Pending / Active / Completed / Skipped / Returned
+        [MaxLength(8000)]
+        public string Data { get; set; } = "Pending"; // Pending / Active / Completed / Skipped / Returned
         public DateTime? ActivatedDate { get; set; }
         public DateTime? CompletedDate { get; set; }
         public int LoopCount { get; set; }
