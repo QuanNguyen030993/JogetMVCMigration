@@ -101,6 +101,7 @@ namespace SurveyReportRE.Models
         public DbSet<PolicyIssuanceChecklist> PolicyIssuanceChecklist { get; set; } 
         public DbSet<SLA> SLA { get; set; }
         public DbSet<Country> Country { get; set; }
+        public DbSet<ChecklistDefinition> ChecklistDefinition { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
