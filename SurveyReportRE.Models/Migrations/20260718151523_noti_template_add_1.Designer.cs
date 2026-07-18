@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260718151523_noti_template_add_1")]
+    partial class noti_template_add_1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -7972,9 +7975,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<string>("Title")
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
-
-                    b.Property<long?>("TypeId")
-                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 

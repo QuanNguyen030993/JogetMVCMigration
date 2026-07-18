@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260718145703_checklist_change_1")]
+    partial class checklist_change_1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -7904,81 +7907,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MailTemplate");
-                });
-
-            modelBuilder.Entity("SurveyReportRE.Models.Migration.Business.MasterData.NotificationTemplate", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("Content")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("CopyFromGuid")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CreatedBy")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
-
-                    b.Property<bool>("Deleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<string>("DeletedBy")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("DraftGuid")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("Guid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
-
-                    b.Property<bool?>("IsActive")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("1");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("RowOrder")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("TemplateName")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Title")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
-                    b.Property<long?>("TypeId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("NotificationTemplate");
                 });
 
             modelBuilder.Entity("SurveyReportRE.Models.Migration.Business.MasterData.Product", b =>
