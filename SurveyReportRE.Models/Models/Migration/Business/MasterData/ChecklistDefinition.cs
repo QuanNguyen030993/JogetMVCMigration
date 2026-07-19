@@ -11,6 +11,7 @@ namespace SurveyReportRE.Models.Migration.Business.MasterData
 
         [MaxLength(2000)]
         public string Checkpoint { get; set; } = "";
+        [MaxLength(8000)]
         public string NeedToCheck { get; set; } = "";
         public long? LineId { get; set; }
         public long? ProductId { get; set; }
