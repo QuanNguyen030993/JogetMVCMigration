@@ -19,4 +19,5 @@ public class Notification : BaseModel
     public string? ReceivedBy { get; set; } = "";
     public Guid? RecordGuid { get; set; }
     public long? Type { get; set; }
+ 
 }
