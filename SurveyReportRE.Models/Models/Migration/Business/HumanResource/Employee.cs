@@ -16,7 +16,7 @@ namespace SurveyReportRE.Models.Migration.Business.HumanResource
         public string FullName { get; set; } = "";
              [MaxLength(4000)]
         public string Department {get;set;} = "";
-        
+        [MaxLength(200)]
         public string AccountName {get;set;} = "";
              [MaxLength(4000)]
         public string Email {get;set;} = "";
@@ -25,6 +25,7 @@ namespace SurveyReportRE.Models.Migration.Business.HumanResource
         public long? AreaId {get;set;} 
         public long? SystemRoleId {get;set;}
         public long? SystemRolesId {get;set;}
+        [MaxLength(400)]
         public string EmailName {get;set;} = "";
         public long?  UsersId {get;set;}
     }

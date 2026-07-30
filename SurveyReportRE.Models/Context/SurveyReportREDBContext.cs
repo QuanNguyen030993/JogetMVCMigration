@@ -11,6 +11,7 @@ using SurveyReportRE.Models.Migration.Business.Workflow;
 using Microsoft.Identity.Client;
 using ERPCore.Models.Migration.Workflow;
 using SurveyReportRE.Models.Migration.Business.Social;
+using ERPCore.Models.Migration.Config;
 namespace SurveyReportRE.Models
 {
     //public partial class SurveyReportREDBContext : IdentityDbContext<User, Role, int, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>, ICloneable
@@ -103,6 +104,7 @@ namespace SurveyReportRE.Models
         public DbSet<Country> Country { get; set; }
         public DbSet<ChecklistDefinition> ChecklistDefinition { get; set; }
         public DbSet<NotificationTemplate> NotificationTemplate { get; set; }
+        public DbSet<GuideStep> GuideStep { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
