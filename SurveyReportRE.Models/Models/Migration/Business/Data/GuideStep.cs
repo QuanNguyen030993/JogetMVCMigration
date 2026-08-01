@@ -28,7 +28,7 @@ public class GuideStep : BaseModel
     [MaxLength(4000)]
     public string Content { get; set; } = "";
     [MaxLength(200)]
-    public string ContentFormat { get; set; } = "markdown";
+    public string ContentFormat { get; set; } = "html";
     public int WaitTimeoutMs { get; set; } = 5000;
     public bool IsEnabled { get; set; } = true;
 }
