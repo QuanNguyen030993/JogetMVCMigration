@@ -18,7 +18,7 @@ namespace SurveyReportRE.Models.Migration.Config
         public bool? ForceReloadPage {get;set;} = false;
         public DateTime? ReloadCacheTime {get;set;} 
         public DateTime? ReloadPageTime {get;set;}
-        public long? TotalLoginHours { get; set; } = 0;
+        public double TotalLoginHours { get; set; } = 0;
 
     }
 }

@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260805095759_change_datatype_totalloginhours")]
+    partial class change_datatype_totalloginhours
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -6114,74 +6117,6 @@ namespace SurveyReportRE.Models.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SLA");
-                });
-
-            modelBuilder.Entity("SignedBackPolicyIssuance", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<Guid?>("CopyFromGuid")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CreatedBy")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
-
-                    b.Property<bool>("Deleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValueSql("0");
-
-                    b.Property<string>("DeletedBy")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid?>("DraftGuid")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("Guid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Note")
-                        .HasMaxLength(4000)
-                        .HasColumnType("nvarchar(4000)");
-
-                    b.Property<long>("PolicyIssuanceId")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("ReminderCount")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("ReminderDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("RowOrder")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SignedBackPolicyIssuance");
                 });
 
             modelBuilder.Entity("SurveyReportRE.Models.DataGridConfig", b =>
