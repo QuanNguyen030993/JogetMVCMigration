@@ -19,6 +19,6 @@ namespace SurveyReportRE.Models.Migration.Config
         public DateTime? ReloadCacheTime {get;set;} 
         public DateTime? ReloadPageTime {get;set;}
         public double TotalLoginHours { get; set; } = 0;
-
+        public bool IsGuideLater { get; set; } = false;
     }
 }

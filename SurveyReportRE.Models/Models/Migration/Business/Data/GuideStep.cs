@@ -17,6 +17,7 @@ public class GuideStep : BaseModel
     [MaxLength(400)]
     public string WikiUrl { get; set; } = "";
     public decimal MaxLoginHours { get; set; } = 0;
+    public long? ExperienceLevelId { get; set; } = 0;
     public bool AutoStart { get; set; }
     public int StepNumber { get; set; }
     [MaxLength(200)]
