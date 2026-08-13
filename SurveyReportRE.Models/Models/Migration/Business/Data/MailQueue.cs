@@ -21,10 +21,13 @@ namespace SurveyReportRE.Models.Migration.Business.Data
         public string TextBody { get; set; } = "";
         [MaxLength(8000)]
         public string HtmlBody { get; set; } = "";
+        [MaxLength(4000)]
         public string CC { get; set; } = "";
+        [MaxLength(4000)]
         public string BCC { get; set; } = "";
         public string FromAccount { get; set; } = "";
         public string Type { get; set; } = "";
+        [MaxLength(4000)]
         public string Attachments { get; set; } = "";
         public bool? IsSend { get; set; } = false;
     }
