@@ -138,6 +138,7 @@ public class PolicyIssuance : BaseModel
     public string? ActionStatus { get; set; }
     public string? LineCode { get; set; } = "";
     public string? ProductCode { get; set; } = "";
-    // TODO: Asset list attachments – move to Attachment module
+    public string? PolicyIssuanceType { get; set; } = "";
+    // TODO: Asset list attachments – move to Att achment module
     // public string? HardSoftCopy { get; set; }           // c_hardSoftCopy
 }
