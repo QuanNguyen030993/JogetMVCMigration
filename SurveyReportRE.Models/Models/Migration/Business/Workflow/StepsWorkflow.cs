@@ -28,10 +28,6 @@ namespace SurveyReportRE.Models.Migration.Business.Workflow
         public bool IsEnd { get; set; }
         public bool IsActive { get; set; } = true;
 
-        public bool CanEdit { get; set; }
-        public bool CanComment { get; set; } = true;
-        public bool CanUpload { get; set; }
-
         [MaxLength(255)]
         public string? DisplayStatus { get; set; }
 
@@ -45,11 +41,6 @@ namespace SurveyReportRE.Models.Migration.Business.Workflow
 
         [MaxLength(100)]
         public string? FlowType { get; set; }
-
-        public bool AllowLoop { get; set; }
-
-        [MaxLength(100)]
-        public string? LoopGroup { get; set; }
 
         public decimal? PosX { get; set; }
         public decimal? PosY { get; set; }
@@ -70,5 +61,6 @@ namespace SurveyReportRE.Models.Migration.Business.Workflow
         public bool? IsReturn { get; set; } = false;
             public long? NotificationTemplateId {  get; set; } = 0; 
             public long? MailTemplateId {  get; set; } = 0; 
+        public bool? IsReturnNeedAccepted { get; set; } = false;    
     }
 }
