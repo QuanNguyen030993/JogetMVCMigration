@@ -23,6 +23,8 @@ namespace SurveyReportRE.Models.Migration.Business.MasterData
         public long? TypeId { get; set; }
         [MaxLength(8000)]
         public string? NotificationQuery { get; set; } = "";
+        [MaxLength(8000)]
+        public string ClearContent { get; set; } = "";
 
     }
 }

@@ -27,6 +27,9 @@ namespace SurveyReportRE.Models.Migration.Business.MasterData
         [MaxLength(8000)]
         public string MailQuery {get;set;}= "";
         public bool? IsActive {get;set;}
+        [MaxLength(8000)]
+        public string ClearContent { get; set; } = "";
+
     }
 }
 
