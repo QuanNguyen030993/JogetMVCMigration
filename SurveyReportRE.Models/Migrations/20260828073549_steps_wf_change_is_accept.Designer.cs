@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260828073549_steps_wf_change_is_accept")]
+    partial class steps_wf_change_is_accept
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -252,10 +255,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("nvarchar(4000)");
 
                     b.Property<string>("PolicyIssuanceRequest")
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
-                    b.Property<string>("PolicyIssuanceType")
                         .HasMaxLength(120)
                         .HasColumnType("nvarchar(120)");
 
@@ -1805,13 +1804,6 @@ namespace SurveyReportRE.Models.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<long?>("ClientId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("ClientName")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
                     b.Property<Guid?>("CopyFromGuid")
                         .HasColumnType("uniqueidentifier");
 
@@ -1839,9 +1831,9 @@ namespace SurveyReportRE.Models.Migrations
                     b.Property<Guid?>("DraftGuid")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Endorsement")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Endorsment")
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<Guid>("Guid")
                         .ValueGeneratedOnAdd()
@@ -1859,23 +1851,23 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("PolicyNo")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("QuotationCode")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<string>("Renew")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<long?>("RowOrder")
                         .HasColumnType("bigint");
 
                     b.Property<string>("TranNo")
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.HasKey("Id");
 
@@ -8037,10 +8029,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(8000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ClearContent")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<Guid?>("CopyFromGuid")
                         .HasColumnType("uniqueidentifier");
 
@@ -8124,10 +8112,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("ClearContent")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Content")
                         .HasMaxLength(8000)

@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SurveyReportRE.Models;
 
 #nullable disable
 
-namespace SurveyReportRE.Models.Migrations
+namespace SurveyReportRE.Migrations
 {
     [DbContext(typeof(SurveyReportREDBContext))]
-    partial class SurveyReportREDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260904063644_add_Sub_PI_Detail")]
+    partial class add_Sub_PI_Detail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -8037,10 +8040,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasMaxLength(8000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ClearContent")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<Guid?>("CopyFromGuid")
                         .HasColumnType("uniqueidentifier");
 
@@ -8124,10 +8123,6 @@ namespace SurveyReportRE.Models.Migrations
                         .HasColumnType("bigint");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<string>("ClearContent")
-                        .HasMaxLength(8000)
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Content")
                         .HasMaxLength(8000)
